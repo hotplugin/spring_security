@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('initialize/Print msg') {
+    stage('initialize docker maven') {
       steps {
         sh 'mvn clean build'
       }
