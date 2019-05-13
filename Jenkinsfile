@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3.6.1-jdk-8'
+    }
+
+  }
   stages {
     stage('initialize/Print msg') {
       steps {
-        echo 'Hello first step'
+        sh 'mvn clean build'
       }
     }
   }
