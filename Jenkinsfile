@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('BuildService') {
+    stage('initialize/Print msg') {
       steps {
-        sh 'mvn clean build'
+        echo 'Hello first step'
       }
     }
   }
