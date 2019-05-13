@@ -7,7 +7,13 @@ pipeline {
 
   }
   stages {
-    stage('initialize docker maven') {
+    stage('build') {
+      steps {
+        sh '''echo PATH = ${PATH}
+echo M2_HOME = ${M2_HOME}'''
+      }
+    }
+    stage('build real') {
       steps {
         sh 'mvn clean build'
       }
